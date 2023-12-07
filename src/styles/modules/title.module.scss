@@ -1,4 +1,7 @@
+// Importing mixins from the 'mixins' file
 @import "../mixins";
+
+// Styles for a title element
 .title {
   display: inline-block;
   width: 100%;
@@ -11,6 +14,8 @@
   margin-top: 2rem;
   margin-bottom: 1.5rem;
   color: var(--black-1);
+
+  // Including styles for small device sizes using a mixin
   @include smallDeviceSize {
     font-size: 3rem;
   }

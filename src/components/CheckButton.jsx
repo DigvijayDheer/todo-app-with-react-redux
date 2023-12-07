@@ -1,10 +1,14 @@
-import React from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
-import styles from '../styles/modules/todoItem.module.scss';
+// Importing necessary dependencies from React and Framer Motion
+import React from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
+// Importing styles for the component
+import styles from "../styles/modules/todoItem.module.scss";
+
+// Variants for animation of the check button and check mark
 const checkVariants = {
   initial: {
-    color: '#fff',
+    color: "#fff",
   },
   checked: {
     pathLength: 1,
@@ -14,26 +18,30 @@ const checkVariants = {
   },
 };
 
+// Variants for animation of the check button background
 const boxVariants = {
   checked: {
-    background: 'var(--primaryPurple)',
+    background: "var(--primaryPurple)",
     transition: { duration: 0.1 },
   },
   unchecked: {
-    background: 'var(--gray-1)',
+    background: "var(--gray-1)",
     transition: { duration: 0.1 },
   },
 };
 
+// Functional component for the check button in a TodoItem
 function CheckButton({ checked, checkHandler }) {
+  // Motion value for animating the path length and opacity
   const pathLength = useMotionValue(0);
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
 
+  // Rendering the component
   return (
     <motion.div
       className={styles.svgBox}
       variants={boxVariants}
-      animate={checked ? 'checked' : 'unchecked'}
+      animate={checked ? "checked" : "unchecked"}
       onClick={checkHandler}
     >
       <motion.svg
@@ -44,7 +52,7 @@ function CheckButton({ checked, checkHandler }) {
       >
         <motion.path
           variants={checkVariants}
-          animate={checked ? 'checked' : 'unchecked'}
+          animate={checked ? "checked" : "unchecked"}
           style={{ pathLength, opacity }}
           fill="none"
           strokeMiterlimit="10"
@@ -58,4 +66,5 @@ function CheckButton({ checked, checkHandler }) {
   );
 }
 
+// Exporting the CheckButton component
 export default CheckButton;

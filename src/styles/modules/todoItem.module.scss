@@ -1,5 +1,7 @@
+// Importing mixins from the '_mixins.scss' file
 @import "../_mixins.scss";
 
+// Styles for an item element
 .item {
   display: flex;
   align-items: center;
@@ -8,16 +10,22 @@
   background: var(--white);
   margin-bottom: 1.5rem;
   border-radius: 4px;
+
+  // Removing bottom margin for the last child
   &:last-child {
     margin-bottom: 0;
   }
 }
+
+// Styles for todo details within an item
 .todoDetails {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
 }
+
+// Styles for the SVG box within an item
 .svgBox {
   flex-basis: 25px;
   flex-shrink: 0;
@@ -29,9 +37,13 @@
   padding: 5px;
   cursor: pointer;
   transition: 0.3s ease background-color;
+
+  // Hover effect for the SVG box
   &:hover {
     background-color: var(--grey-2);
   }
+
+  // Styles for the SVG within the SVG box
   svg {
     width: 100%;
     height: 100%;
@@ -41,35 +53,45 @@
     justify-content: center;
   }
 }
+
+// Styles for text elements within an item
 .texts {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
+// Styles for the main todo text
 .todoText {
   word-break: break-all;
   font-weight: 500;
   font-size: 1.4rem;
   color: var(--black-2);
 
+  // Styles for completed todo text
   &--completed {
     text-decoration: line-through;
     opacity: 0.7;
   }
 }
+
+// Styles for the time element within an item
 .time {
   display: block;
   font-size: 1.2rem;
   font-weight: 300;
-  // margin-top: -0.2rem;
   color: var(--black-2);
 }
+
+// Styles for todo actions within an item
 .todoActions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
+
+// Styles for an icon within todo actions
 .icon {
   font-size: 2rem;
   padding: 0.5rem;
@@ -81,6 +103,8 @@
   justify-content: center;
   cursor: pointer;
   transition: 0.3s ease background-color;
+
+  // Hover effect for the icon
   &:hover {
     background-color: var(--gray-2);
   }

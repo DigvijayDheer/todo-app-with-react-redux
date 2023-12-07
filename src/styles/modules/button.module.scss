@@ -1,3 +1,4 @@
+// Styles for a generic button
 .button {
   display: inline-block;
   height: auto;
@@ -10,22 +11,26 @@
   text-transform: capitalize;
   cursor: pointer;
   overflow: hidden;
+
+  // Styles for a nested select element within the button
   &__select {
     color: var(--black-2);
     font-family: "Quicksand Variable", sans-serif;
     padding: 1rem;
     border: none;
     background-color: var(--bg-3);
-
     width: 150px;
     cursor: pointer;
   }
 }
 
+// Styles for the primary variant of the button
 .button--primary {
   background-color: var(--primaryPurple);
   color: var(--white);
 }
+
+// Styles for the secondary variant of the button
 .button--secondary {
   background-color: var(--bg-3);
   color: var(--black-1);
